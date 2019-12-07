@@ -1,0 +1,17 @@
+ tensorboardX
+ sklearn
+ numpy
+ matplotlib
+ torch-ac
+ gym
+ gym-minigrid
+ colored_traceback
+ graphviz
+ gym[atari]
+ box2d-py
+ opencv-python
+ torchvision
+ pybullet
+ tqdm
+ tensorflow-gpu
+ kdtree
