@@ -1,7 +1,7 @@
 # Meta-Learning Curiosity Algorithms
 "Meta-Learning Curiosity Algorithms" by [Ferran Alet](http://alet-etal.com/)\*, [Martin Schneider](https://github.com/mfranzs)\*, [Tomas Lozano-Perez](https://people.csail.mit.edu/tlp/), and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). 2019. “Meta-Learning Curiosity Algorithms.” In Meta-Learning and Reinforcment Learning Workshops @NeurIPS. 
 
-See a short version of the paper [here](http://metalearning.ml/2019/papers/metalearn2019-alet.pdf). 
+See the paper [here](https://openreview.net/pdf?id=BygdyxHFDS). 
 
 ## Overview of Running an Experiment
 1. Specify your operations in operations.py.
