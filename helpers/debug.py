@@ -8,6 +8,36 @@ import mlca.helpers.debug
 import colored_traceback
 colored_traceback.add_hook()
 
+class Profiler:
+    def __init__(self, logger, print_enabled=True):
+        self.logger = logger
+        self.print_enabled = print_enabled
+        self.reset(-1, False)
+
+    def print(self, *s):
+        if self.print_enabled:
+            print(*s)
+
+    def reset(self, i_episode, log=True):
+        if log:
+            self.tick(i_episode, "reset")
+            self.print(
+                "--------------------------- Time since last reset: ",
+                (time.time() - self.last_reset),
+            )
+
+        self.s = time.time()
+        self.last_reset = time.time()
+
+    def tick(self, i_episode, name):
+        if self.logger and i_episode:
+            self.logger.add_scalar(
+                "Profiler: " + name, time.time() - self.s, i_episode,
+            )
+
+        self.print("---", name, time.time() - self.s)
+        self.s = time.time()
+
 class Logger():
   def __init__(self, tensorboard_writer):
     self.tensorboard_writer = tensorboard_writer
