@@ -27,13 +27,13 @@ import torch.nn.functional as F
 class Operation:
   # Static vars, manually configured for each operation
   # The ProgramTypes that this operation takes
-  input_program_types: ClassVar[Tuple[program_types.ProgramType, ...]]
+  input_program_types: ClassVar[Tuple[program_types.Type, ...]]
   # Can this operation be optimized so it's output reaches a bounded minimum (ex. zero)?
   can_optimize_to_bounded_minimum: ClassVar[bool]
   # Is this operation commutative?
   commutative: ClassVar[bool] = False
   # The operation's output type
-  output_type: ClassVar[program_types.ProgramType] = None
+  output_type: ClassVar[program_types.Type] = None
   # Does this operation have a bounded minimum? Ex. SqrtAbs has a min of 0
   might_have_bounded_minimum: ClassVar[bool] = False
   # Does this operation create gradients? Ex. a neural network
@@ -97,7 +97,7 @@ class Operation:
     self.num_uses_in_program = 0
   
   @staticmethod
-  def check_program_types_match_signature(inputs, input_program_types: List[program_types.ProgramType]):
+  def check_program_types_match_signature(inputs, input_program_types: List[program_types.Type]):
     assert len(inputs) == len(input_program_types)
 
     for input_node, input_type in zip(inputs, input_program_types):
@@ -121,7 +121,7 @@ class Operation:
     return cls.can_optimize_to_bounded_minimum 
 
   @classmethod
-  def output_type_fn(cls, input_types: List[program_types.ProgramType]):
+  def output_type_fn(cls, input_types: List[program_types.Type]):
     output_type_class = cls._get_output_type_class_from_input_types(input_types)
     if output_type_class == INVALID_INPUTS:
       return INVALID_INPUTS
@@ -142,7 +142,7 @@ class Operation:
       return output_type
 
   @classmethod
-  def _get_output_type_class_from_input_types(cls, input_type: program_types.ProgramType):
+  def _get_output_type_class_from_input_types(cls, input_type: program_types.Type):
     return cls.output_type
 
   """Helper that forbids duplicate inputs. Note that subclasses need to explicitly add this if they want it."""

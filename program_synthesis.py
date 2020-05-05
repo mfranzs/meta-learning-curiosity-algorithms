@@ -187,8 +187,8 @@ def search(
         current_update_program: List[operations.Operation] = []
 
         variables: List[operations.Operation] = []
-        variables_by_type: Dict[program_types.ProgramType, Set[operations.Operation]] = {}
-        data_structures_by_type: Dict[program_types.ProgramType, List[operations.Operation]] = {}
+        variables_by_type: Dict[program_types.Type, Set[operations.Operation]] = {}
+        data_structures_by_type: Dict[program_types.Type, List[operations.Operation]] = {}
 
         existing_program_numbers: Set[ProgramNumber] = set()
 
