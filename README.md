@@ -1,5 +1,5 @@
 # Meta-Learning Curiosity Algorithms
-"Meta-Learning Curiosity Algorithms" by [Ferran Alet](http://alet-etal.com/)\*, [Martin Schneider](https://github.com/mfranzs)\*, [Tomas Lozano-Perez](https://people.csail.mit.edu/tlp/), and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). 2019. “Meta-Learning Curiosity Algorithms.” In Meta-Learning and Reinforcment Learning Workshops @NeurIPS. 
+This is the code for "Meta-Learning Curiosity Algorithms" by [Ferran Alet](http://alet-etal.com/)\*, [Martin Schneider](https://github.com/mfranzs)\*, [Tomas Lozano-Perez](https://people.csail.mit.edu/tlp/), and [Leslie Kaelbling](https://people.csail.mit.edu/lpk/). Published at ICLR 2020 (and previously in Meta-Learning and Reinforcment Learning Workshops at NeurIPS 2019).
 
 See the paper [here](https://openreview.net/pdf?id=BygdyxHFDS). 
 
